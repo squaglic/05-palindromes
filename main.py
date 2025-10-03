@@ -1,11 +1,8 @@
-
 """Code qui teste si une chaîne de caractères est un palindrome"""
 #### Fonction secondaire
 
-
-
 def normaliser_accents(chaine):
-    """Remplace les accents/ligatures par leurs équivalents ASCII."""
+    """Remplace les accents/ligatures par leurs équivalents ASCII"""
     chaine = chaine.lower()
     mapping = str.maketrans({
         #espace
@@ -24,11 +21,9 @@ def normaliser_accents(chaine):
     return chaine.translate(mapping)
 
 def ispalindrome(p):
-    """Dis si une chaîne de caractère p est un palindrome"""
+    """Code qui teste si une chaîne de caractères est un palindrome"""
     s = normaliser_accents(p)
     return s == s[::-1]
-
-
 
 if __name__ == "__main__":
     tests = [
@@ -38,17 +33,9 @@ if __name__ == "__main__":
         "été",
         "Kayak",
         "Engage le jeu que je le gagne",
-    ]
-    for s in tests:
-        print(f"{s!r} -> {ispalindrome(s)}")
-
-
-
-
-
-
-
-
+]
+    for x in tests:
+        print(f"{x!r} -> {ispalindrome(x)}")
 
 def main():
     """Fait quelques appels sur différentes chaînes de caractères"""
@@ -56,7 +43,6 @@ def main():
 
     for s in ["radar", "kayak", "level", "rotor", "civique", "deifie"]:
         print(s, ispalindrome(s))
-
 
 if __name__ == "__main__":
     main()
